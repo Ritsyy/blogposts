@@ -19,15 +19,20 @@ class BlogSerializer(serializers.ModelSerializer):
 
 class ParagraphSerializer(serializers.ModelSerializer):
 
+    comments = serializers.SerializerMethodField()
+
+    def get_comments(self, obj):
+        comment = obj.comment_set.all()
+        comment_serializer = CommentSerializer(comment, many=True)
+        return comment_serializer.data
+
     class Meta:
         model = Paragraph
-        fields = ('paragraph')
+        fields = ('paragraph', 'comments')
 
 
 class CommentSerializer(serializers.ModelSerializer):
 
-    paragraph = serializers.RelatedField(source='paragraph', read_only=True)
-
     class Meta:
         model = Comment
-        fields = ('comment', 'paragraph')
+        fields = ('comment',)
