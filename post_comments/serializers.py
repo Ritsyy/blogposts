@@ -6,6 +6,7 @@ from .models import *
 class BlogSerializer(serializers.ModelSerializer):
 
     paras = serializers.SerializerMethodField()
+    paginate_by = 10
 
     def get_paras(self, obj):
         paragraph = obj.paragraph_set.all()
@@ -14,7 +15,7 @@ class BlogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Blog
-        fields = ('title', 'text', 'paras')
+        fields = ('title', 'text', 'paras', 'id')
 
 
 class ParagraphSerializer(serializers.ModelSerializer):
@@ -28,7 +29,7 @@ class ParagraphSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Paragraph
-        fields = ('paragraph', 'comments')
+        fields = ('paragraph', 'comments', 'id')
 
 
 class CommentSerializer(serializers.ModelSerializer):
