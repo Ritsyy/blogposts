@@ -7,6 +7,7 @@ Blogs is the application to comment on each paragraph of a blog.
   - You will be able to see comments on each paragraph of a blog in detail view in the API.
 
 # Project Setup
+```
 
   - virtualenv env_blogposts
   - source env_blogposts/bin/activate
@@ -14,6 +15,8 @@ Blogs is the application to comment on each paragraph of a blog.
   - ./manage.py makemigrations
   - ./manage.py migrate
   - ./manage.py createsuperuser
+```
+
   - After making superuser runserver with ` ./manage.py runserver`
   - on localhost:8000/admin create sample blogposts, it will automatically generate paragraphs for every two line enters
   - in the comments section you can enter comment on each paragraph
