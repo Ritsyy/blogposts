@@ -9,12 +9,12 @@ Blogs is the application to comment on each paragraph of a blog.
 # Project Setup
 ```
 
-  - virtualenv env_blogposts
-  - source env_blogposts/bin/activate
-  - pip install -r requirements.txt
-  - ./manage.py makemigrations
-  - ./manage.py migrate
-  - ./manage.py createsuperuser
+   virtualenv env_blogposts
+   source env_blogposts/bin/activate
+   pip install -r requirements.txt
+   ./manage.py makemigrations
+   ./manage.py migrate
+   ./manage.py createsuperuser
 ```
 
   - After making superuser runserver with ` ./manage.py runserver`
