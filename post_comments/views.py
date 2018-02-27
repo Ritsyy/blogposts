@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import status
+from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -36,7 +37,7 @@ class BlogDetailView(APIView):
     allowed_methods = ['GET']
 
     def get(self, request, blog_id):
-        blog = Blog.objects.get(id=blog_id)
+        blog = get_object_or_404(Blog, id=blog_id)
         serializer = BlogSerializer(blog)
         response = Response(serializer.data)
         return response
