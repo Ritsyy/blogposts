@@ -8,7 +8,7 @@ djangorestframework==3.7.3
 enum34==1.1.6
 etcd==2.0.8
 idna==2.5
-ipython==5.5.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 panda==0.3.1
 pathlib2==2.3.0
